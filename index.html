@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 20px;
+    }
+    #container > div {
+      text-align: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 20px;
+    }
+    #container > div > img {
+      width: 100%;
+    }
+    span{
+      padding: 7px 12px;
+      margin: 3px;
+      border: 2px solid black;
+      font-weight: bolder;
+      background-color: aqua;
+      font-size: large;
+    }
+  </style>
+  <body>
+    <div</div>
+    <br>
+    <span onclick="window.location.href='Frontend/signin.html'">Login</span>
+
+    <span onclick="window.location.href='Frontend/createaccount.html'">Register</span>
+    <span onclick="window.location.href='Frontend/cart.html'">Cart</span>
+    <br>
+  </div>
+<br>
+    <div id="container">
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 1</h3>
+        <p>7999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 1</h3>
+        <p>999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 3</h3>
+        <p>8999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 5</h3>
+        <p>4999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 6</h3>
+        <p>2999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 7</h3>
+        <p>12999</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 8</h3>
+        <p>7000</p>
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <!-- Add more options as needed -->
+        </select>
+        <button>Add to Cart</button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+          alt=""
+        />
+        <h3>Woodland 9</h3>
+        <p>999</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+    
+  let items = [];
+
+  document.querySelector("button").addEventListener("click", function () {
+    const parentDiv = this.parentNode;
+    const h3 = parentDiv.querySelector("h3").textContent;
+    const p = parentDiv.querySelector("p").textContent;
+    const img = parentDiv.querySelector("img").getAttribute("src");
+    const select = parentDiv.querySelector("select");
+    const quantity = select.options[select.selectedIndex].value;
+
+    items.push({ h3, p, img, quantity });
+    localStorage.setItem("items", JSON.stringify(items));
+
+    window.location.href = "Frontend/cart.html";
+  });
+
+
+</script>
